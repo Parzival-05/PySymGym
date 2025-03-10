@@ -10,12 +10,12 @@ TrainingConfig:
   threshold_coverage: 100
   threshold_steps_number: 1000
   load_to_cpu: False
-  epochs: 5
+  epochs: 15
 
 ValidationConfig:
   validation_mode:
     val_type: svms_model
-    process_count: 10
+    process_count: 22
     PlatformsConfig:
       - name: dotnet
         DatasetConfigs:
@@ -23,10 +23,10 @@ ValidationConfig:
             dataset_description: ../david_val_experiment_dotnet_dataset.json
         SVMSInfo:
           - name: VSharp
-            launch_command: dotnet VSharp.ML.GameServer.Runner.dll --mode sendmodel --mapname {MapName} --model {ModelPath} --stepstoplay {StepsToPlay} --defaultsearcher {DefaultSearcher} --stepstostart {StepsToStart} --assemblyfullname {AssemblyFullName} --nameofobjecttocover {NameOfObjectToCover} --outfolder {OutputDir} --port {Port} --usegpu --optimize
+            launch_command: dotnet VSharp.ML.GameServer.Runner.dll --mode sendmodel --mapname {MapName} --model {ModelPath} --stepstoplay {StepsToPlay} --defaultsearcher {DefaultSearcher} --stepstostart {StepsToStart} --assemblyfullname {AssemblyFullName} --nameofobjecttocover {NameOfObjectToCover} --outfolder {OutputDir} --port {Port} --usegpu
             min_port: 35100
             max_port: 35150
             server_working_dir: ../GameServers/VSharp/VSharp.ML.GameServer.Runner/bin/Release/net7.0
 MLFlowConfig:
   tracking_uri: http://127.0.0.1:8080
-  experiment_name: david_val_experiment_11.02_model
+  experiment_name: val_experiment.model

@@ -10,7 +10,7 @@ TrainingConfig:
   threshold_coverage: 100
   threshold_steps_number: 1000
   load_to_cpu: False
-  epochs: 5
+  epochs: 15
 
 ValidationConfig:
   validation_mode:
@@ -30,4 +30,4 @@ ValidationConfig:
 
 MLFlowConfig:
   tracking_uri: http://127.0.0.1:8080
-  experiment_name: david_val_experiment_11.02_each_step
+  experiment_name: val_experiment.each_step
